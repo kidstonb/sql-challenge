@@ -1,0 +1,34 @@
+departments
+-
+dept_no varchar(6) PK FK -< dept_emp.dept_no 
+dept_name varchar(20)
+
+dept_emp
+-
+emp_no varchar(8) FK -< employees.emp_no
+dept_no varchar(6)
+
+dept_manager
+-
+dept_no varchar(6) FK >- departments.dept_no
+emp_no varchar(8) FK -< employees.emp_no
+
+employees
+-
+emp_no varchar(8) PK FK -< employees.emp_no
+emp_title_id varchar(8)
+birthday_date varchar(12)
+first_name varchar(25)
+last_name varchar(25)
+sex varchar(3)
+hire_data varchar(12)
+
+salaries
+-
+emp_no varchar(8) PK FK -< employees.emp_no
+salary varchar(8)
+
+titles
+-
+title_id varchar(8) PK FK -< employees.emp_title_id
+title varchar(30)
